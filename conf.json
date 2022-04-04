@@ -1,14 +1,12 @@
 {
   "use": "puppeteer",
   "headless": true,
-  "script": "./userFns.js",
-  "mode": "page-only",
-  "depth": 1,
   "seeds": [
-    "https://www.instagram.com/visit_berlin/"
+    "https://www.mirena-us.com/"
   ],
   "warc": {
-    "naming": "url"
+    "naming": "url",
+    "append": true
   },
   "connect": {
     "launch": true,
@@ -16,9 +14,11 @@
     "port": 9222
   },
   "crawlControl": {
-    "globalWait": 60000,
+    "globalWait": 3000,
     "inflightIdle": 1000,
     "numInflight": 2,
-    "navWait": 8000
+    "navWait": 4000,
+    "mode": "page-same-domain",
+    "depth": 2
   }
 }

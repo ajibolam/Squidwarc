@@ -18,6 +18,8 @@ const program = require('commander')
 const configRunner = require('./lib/runners')
 const cp = require('./lib/utils/colorPrinters')
 
+process.env.NODEWARC_WRITE_GZIPPED = true
+
 process.on('unhandledRejection', function (reason, p) {
   console.log('Unhandled Rejection:', reason.stack)
   // or next(reason);
